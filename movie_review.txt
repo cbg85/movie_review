@@ -1,0 +1,3 @@
+Github Link: https://github.com/cbg85/movie_review
+
+Codd Server Link: cguthridge1/public_html/WP/HW/HW2/movie_review
