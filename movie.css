@@ -1,0 +1,225 @@
+/* General Body Styles */
+body {
+    background-image: url('images/background.png'); /* Assuming images are in an 'images' folder */
+    background-repeat: repeat;
+    font-size: 8pt;
+    font-family: Verdana, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Banner Area */
+#banner { /* Matches your #banner ID */
+    background-image: url('images/bannerbackground.png'); /* Assuming images are in an 'images' folder */
+    background-repeat: repeat-x;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#banner img { /* Targets the image inside your #banner */
+    height: 50px;
+    /* width: auto; or specify if banner.png has a specific width */
+}
+
+/* Main Heading (TMNT (2007)) */
+h1 { /* Targets the h1 directly as per your HTML */
+    text-align: center;
+    font-size: 24pt;
+    font-weight: bold;
+    font-family: Tahoma, Verdana, sans-serif;
+    margin: 10px 0; /* Add some vertical margin */
+}
+
+/* Overall Content Area */
+#main { /* Matches your #main ID */
+    width: 800px;
+    margin: 0 auto; /* Center horizontally */
+    border: 4px solid #AAAAAA; /* Gray solid border */
+    display: flex; /* Use flexbox for left and right sections */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    overflow: hidden; /* Ensures the border wraps around all floated/flexed content */
+}
+
+/* Left Section (Rating and Reviews) */
+#left { /* Matches your #left ID */
+    width: 550px; /* As specified: 800px - 250px (right) = 550px */
+    flex-shrink: 0; /* Prevents shrinking */
+    /* background-color removed to allow body background to show through */
+}
+
+/* Rating Box */
+#rating { /* Matches your #rating ID */
+    width: 100%;
+    height: 83px; /* Height of rottenbig.png */
+    background-image: url('images/rottenbackground.png'); /* Assuming images are in an 'images' folder */
+    background-repeat: repeat-x;
+    display: flex;
+    align-items: center;
+    padding-left: 10px; /* Space from left edge */
+    box-sizing: border-box;
+}
+
+#rating img { /* Targets rottenbig.png inside #rating */
+    height: 83px;
+    margin-right: 10px; /* Space between image and percentage */
+}
+
+#rating span:first-of-type { /* Targets the 32% span */
+    font-size: 48pt;
+    font-weight: bold;
+    color: red;
+}
+
+.review-count { /* Targets the (88 reviews total) span */
+    color: white;
+    font-size: 8pt;
+    margin-left: 10px; /* Space between percentage and review count */
+    position: relative;
+    top: 15px; /* Adjust to move it down relative to the 32% */
+    white-space: nowrap; /* Keep it on one line */
+}
+
+/* Reviews Container (the two columns) */
+.reviews { /* Matches your .reviews class */
+    display: flex;
+    padding: 10px; /* Overall padding around the two columns */
+    padding-top: 15px; /* Increased top padding to push content down from rating */
+    box-sizing: border-box;
+}
+
+.column { /* Matches your .column class */
+    width: 47%; /* (550px - 20px padding) / 2 = 265px. 265/550 ~ 48%. Let's use 47% + margin */
+    box-sizing: border-box;
+}
+
+.column:first-child {
+    margin-right: 2%; /* 2% horizontal spacing between columns */
+}
+
+/* Individual Review Box (the yellow boxes) */
+.review { /* Matches your .review class */
+    background-color: #E1D697;
+    border: 2px solid #AAAAAA;
+    padding: 8px; /* 8px space between content and border */
+    /* margin-bottom handled by critic-info below it */
+    font-size: 8pt;
+    overflow: hidden; /* Clears the float inside */
+    line-height: 1.3;
+}
+
+.review img.icon { /* Targets the fresh/rotten icon inside the review */
+    float: left;
+    margin-right: 5px; /* Space between icon and text */
+}
+
+.review q {
+    quotes: none; /* Remove default quote marks */
+    font-weight: bold; /* Make the quote text bold */
+}
+
+/* Critic Information (below the review box) */
+.critic-info { /* New class for the critic info paragraphs */
+    margin-top: 5px; /* Small space between review box and critic info */
+    margin-bottom: 20px; /* Space after critic info before the next review box */
+    font-style: italic;
+    font-size: 8pt;
+    line-height: 1.2;
+}
+
+.critic-info img { /* Targets the critic.gif image */
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* Right Section (General Overview) */
+#overview { /* Matches your #overview ID */
+    width: 250px; /* As specified */
+    background-color: #A2B964;
+    padding: 10px; /* 10px space between edge and text */
+    font-size: 8pt;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box; /* Include padding in the width */
+    flex-shrink: 0; /* Prevents shrinking */
+    /* This section naturally sits to the right as a flex item */
+}
+
+#overview .header { /* Styling for "GENERAL OVERVIEW" text */
+    background-color: #92B45A; /* Slightly darker green/background for the header */
+    padding: 5px 0; /* Add some padding around the text */
+    text-align: center;
+    font-weight: bold;
+    /* margin-bottom: 10px; */ /* Removed/reduced to move image up */
+    margin-bottom: 0; /* Adjust to move the image right up against the header */
+    color: white; /* Text color for the header */
+}
+
+#overview img { /* Style for generaloverview.png */
+    display: block; /* Make it a block element to control margins */
+    margin: 0 auto 10px auto; /* Center image horizontally and add space below */
+    max-width: 100%; /* Ensure image doesn't overflow */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#overview dl {
+    margin: 0; /* Remove default margin for definition list */
+    padding: 0; /* Remove default padding */
+}
+
+#overview dt {
+    font-weight: bold;
+    margin-top: 10px; /* Space between terms */
+    line-height: 1.3;
+}
+
+#overview dd {
+    margin-left: 1.5em; /* Add indentation for the definition details (tabbed effect) */
+    margin-bottom: 10px; /* Space after definition */
+    line-height: 1.3;
+}
+
+#overview a {
+    color: #0000FF; /* Set link color to blue */
+    text-decoration: none; /* Remove underline */
+}
+
+#overview a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+
+/* Footer Bar */
+#bar { /* Matches your #bar ID */
+    background-color: #A2B964;
+    text-align: center;
+    padding: 5px; /* 5px space between text edge and element's outer edge */
+    margin: 0 auto; /* Center horizontally below the content area */
+    width: 800px; /* Match the width of the content area */
+    box-sizing: border-box;
+    border: 4px solid #AAAAAA; /* Match border of content area */
+    border-top: none; /* No top border, visually connect to content area */
+}
+
+#bar p {
+    margin: 0; /* Remove default paragraph margin */
+}
+
+/* W3C Validators (Fixed Position) */
+#validators { /* Matches your #validators ID */
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    z-index: 1000; /* Ensures it stays on top of other content */
+    text-align: right; /* Align validator images to the right */
+}
+
+#validators a {
+    display: block; /* Make links block level to stack them vertically */
+    margin-bottom: 5px; /* Space between validator links */
+}
+
+#validators img {
+    border: none; /* Remove default border for images that are links */
+}
